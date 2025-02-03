@@ -112,8 +112,8 @@ func GetMainInnoStatusToTable() string {
 
 	countTable := table.Table{}
 	countTable.SetTitle("GPU Count")
-	countTable.Style().Size.WidthMax = 90
-	countTable.Style().Size.WidthMin = 90
+	countTable.Style().Size.WidthMax = 95
+	countTable.Style().Size.WidthMin = 95
 	countTable.AppendHeader(table.Row{"Key", "Value"})
 	countTable.AppendRows([]table.Row{
 		table.Row{"HWR Event", status.HWREventCount},
@@ -127,8 +127,8 @@ func GetMainInnoStatusToTable() string {
 	})
 	utilisationTable := table.Table{}
 	utilisationTable.SetTitle(fmt.Sprintf("GPU Utilisation: %s%%", status.GPUUtilisation))
-	utilisationTable.Style().Size.WidthMax = 90
-	utilisationTable.Style().Size.WidthMin = 90
+	utilisationTable.Style().Size.WidthMax = 95
+	utilisationTable.Style().Size.WidthMin = 95
 	utilisationTable.AppendHeader(table.Row{"Key", "Value"})
 	utilisationTable.AppendRows([]table.Row{
 		table.Row{"TDM", status.TDMUtilisation},

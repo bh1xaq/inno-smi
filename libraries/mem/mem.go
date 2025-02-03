@@ -108,6 +108,8 @@ func GetInfoToTable() string {
 	t := table.Table{}
 	t.SetTitle("Inno GPU Memory Info")
 	t.AppendHeader(table.Row{"PID", "Name", "Alloc size[K]"})
+	t.Style().Size.WidthMin = 100
+	t.Style().Size.WidthMax = 100
 	for _, info := range memInfo {
 		t.AppendRow(table.Row{info.PID, info.Name, info.AllocSize})
 	}
@@ -122,6 +124,8 @@ func GetUsageToTable() string {
 	t := table.Table{}
 	t.SetTitle("Inno GPU Memory Usage")
 	t.AppendHeader(table.Row{"HEAP_USAGE", "TOTAL_SIZE", "FREE_SIZE", "MAX_BUCKET_SIZE", "MIN_BUCKET_SIZE", "BUCKET_COUNT"})
+	t.Style().Size.WidthMin = 100
+	t.Style().Size.WidthMax = 100
 	for _, usage := range usages {
 		t.AppendRow(table.Row{usage.HeapUsage, usage.TotalSize, usage.FreeSize, usage.MaxBucketSize, usage.MinBucketSize, usage.BucketCount})
 	}
